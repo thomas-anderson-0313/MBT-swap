@@ -6,77 +6,13 @@
   height: 200px;
   display: grid;
   grid-template-areas: "logo nav";
-
-  /* Cosmetics */
-  /* background-color: #282c34; */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.test{
-  transform: translate(-50%, -50%);
-  padding: 12px 48px;
-  color: #ece620;
-  background: linear-gradient(to right, #ff0066 0, #99ff66 20%, white 30%);
-  background-position: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
-  font-weight: 600;
-  font-size: 30px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-@-moz-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 240px;
-  }
-  100% {
-    background-position: 240px;
-  }
-}
-@-webkit-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 240px;
-  }
-  100% {
-    background-position: 240px;
-  }
-}
-@-o-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 240px;
-  }
-  100% {
-    background-position: 240px;
-  }
-}
-@keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 240px;
-  }
-  100% {
-    background-position: 240px;
-  }
-}
 
 
 .Logo {
   grid-area: logo;
-  height: 90px;
+  height: 180px;
   margin-top: 20px;
   margin-left: 70px;
 }
@@ -91,7 +27,7 @@
 
 .Nav a {
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
   transition: 0.5s;
   text-decoration: none;
@@ -105,21 +41,35 @@
 
 .router-link:hover{
   transform: scale(1.1)!important;
-  color: #18ab29!important;
+  color: #26e3ff!important;
+  border-bottom: solid 7px #26e3ff!important;
   text-decoration: none!important;
 }
+.router-link:focus {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: none;
+  margin-left: 50px;
+  border-bottom: solid 7px #26e3ff!important;
+}
+.router-link:active{
+  color: #fff!important;
+}
 .Nav button {
-  background-color:#44c767;
+  background-color:#26e3ff;
 	border-radius:28px;
-	border:1px solid #18ab29;
+	border:1px solid #12a2b8;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
+	color:#0d0d0d;
+  font-weight: bold;
+	font-family:'proxima-nova', sans-serif;
+	font-size:20px;
+	padding:12px 31px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+	text-shadow:0px 1px 0px #53939c;
 }
 
 .Nav button:active {

@@ -12,7 +12,6 @@ import Fiat from "./fiat"
 import './buy.css';
 import '../../bootstrap.min.css';
 
-
 export default function Buy() {
     const [spotState,setSpotState] = useState(false);
 

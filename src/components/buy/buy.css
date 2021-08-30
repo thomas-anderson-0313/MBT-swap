@@ -1,19 +1,18 @@
 .button-fiat-index{
-    /* margin-left: 50%; */
-    width: 25%;
-    height: 80px;
-    margin-top: -25px;
+    margin-left: 2%;
+    width: 20%;
+    height: 50px;
     /* position: fixed; */
     border: none;
-    border-radius: 0 15px 15px 0;
+    border-radius: 20px;
     box-shadow:inset 0px 1px 0px 0px #dcecfb;
-	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-	background-color:#bddbfa;
-	border:1px solid #84bbf3;
+	/* background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%); */
+	background:none;
+	border:2px solid #26e3ff;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:25px;
+	font-size:20px;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
@@ -21,32 +20,24 @@
 }
 
 .button-fiat-index:hover{
-    background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
-	background-color:#80b5ea;
 }
 
-.button-fiat-index:active{
-    /* position:relative;
-	top:1px; */
-    margin-top: -24px;
-}
+
 
 .button-spot-index{
-    width: 25%;
-    height: 80px;
-    margin-left: 25%;
-    margin-top: -25px;
+    width:20%;
+    height: 50px;
+    margin-left: 29%;
     /* position: fixed; */
     border: none;
-    border-radius: 15px 0 0 15px;
+    border-radius: 20px;
     box-shadow:inset 0px 1px 0px 0px #97c4fe;
-	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	background-color:#3d94f6;
-	border:1px solid #337fed;
+	background-color:#26e3ff;
+	/* border:1px solid #000002; */
 	cursor:pointer;
-	color:#ffffff;
+	color:#000002;
 	font-family:Arial;
-	font-size:25px;
+	font-size:20px;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
@@ -54,15 +45,9 @@
 }
 
 .button-spot-index:hover{
-    background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-	background-color:#1e62d0;
 }
 
-.button-spot-index:active{
-    /* top: 1px;
-    position:relative; */
-    margin-top: -24px;
-}
+
 
 .y-card-form-top{
     /* border: 2px solid red; */

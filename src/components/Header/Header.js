@@ -13,6 +13,7 @@ export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [pubKey, setPubKey] = useState('');
+  const [selectFlag, setSelectFlag] = useState("1");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
@@ -45,8 +46,9 @@ export default function Header() {
 
   const handleConnect = (e) =>{
     e.preventDefault();
-    if (typeof window !== "undefined") {
+    if (typeof window.ethereum !== "undefined") {
         try {
+          console.log("metamask is installed already, good !!!");
           window.ethereum.enable().then(async()=> {
             setPubKey(window.ethereum.selectedAddress)
           })
@@ -56,6 +58,7 @@ export default function Header() {
         }
   }
 }
+
 
   return (
     <header className="Header">
@@ -68,9 +71,9 @@ export default function Header() {
       >
         <nav className="Nav">
             <div>
-                  <Link to="/" className="router-link">BUY</Link>
-                  <Link to="/exchange" className="router-link">EXCHANGE</Link>
-                  <Link to="/referral" className="test">Invite Friends</Link>
+                  <Link to="/" className="router-link" onClick = {()=>setSelectFlag("1")} style = {selectFlag=="1"?{borderBottom: "solid 7px #26e3ff"}:null}>BUY</Link>
+                  <Link to="/exchange" className="router-link" onClick = {()=>setSelectFlag("2")} style = {selectFlag=="2"?{borderBottom: "solid 7px #26e3ff"}:null}>EXCHANGE</Link>
+                  <Link to="/referral" className="router-link" onClick = {()=>setSelectFlag("3")} style = {selectFlag=="3"?{borderBottom: "solid 7px #26e3ff"}:null}>INVITE FRIENDS</Link>
             </div>
           <button onClick = {handleConnect}>{window.ethereum?window.ethereum.selectedAddress!==null?`${pubKey.slice(0,6)}...`:"CONNECT":"please install!"}</button>
         </nav>

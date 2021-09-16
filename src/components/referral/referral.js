@@ -1,50 +1,42 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {Grid} from '@material-ui/core';
 import { useState } from 'react';
+import Calendar from 'react-calendar';
+import './Calendar.css';
 
 import './referral.css';
 import '../../bootstrap.min.css';
+import referIcon from '../../assets/refer.svg';
 
-import Getlink from "./getLink";
+import GetLink from "./getLink";
+import TotalReward from "./totalReward";
+import Withdraw from "./withdraw";
+import TotalRefer from "./totalReferral";
 
-export default function Referral() {
-
-    const [getLinkState,setGetLinkState] = useState(false);
-
-    const handleToggle = (e)=>{
-        setGetLinkState(e);
-    }
-
+export default function Referral(props) {
+    const {address} = props;
     return (
-        <div>
-            <Grid container>
-                <Grid item xs={12} sm = {1} md = {1} lg={1}></Grid>
-                <Grid item xs = {12} sm = {3} md = {3} lg={3}>
-                    <div className = "referral-menu text-center">
-                            <div style={{padding:30}}>
-                                <div className = "mt-3 referral-menu-x">
-                                    <span className = "refer-font" onClick={()=>{handleToggle(false)}}>
-                                        Get Link to refer
-                                    </span>
-                                </div>
-                                <div className = "mt-5 referral-menu-x">
-                                    <span className = "refer-font">
-                                       Track your referral progress
-                                    </span>
-                                </div>
-                                <div className = "mt-5 referral-menu-x">
-                                    <span className = "refer-font">
-                                        Your total rewards
-                                    </span>
-                                </div>
-                            </div>
+        <div style = {{marginTop:'2%'}}>
+            <Grid container style={{ gap: 35 }}>
+                <Grid item xs={12} sm = {12} md = {1} lg={1}></Grid>
+                <Grid item xs = {12} sm = {12} md = {4} lg={4}>
+                    <div className = "referral-left text-center">
+                        <div className = "refer-title">REFER friends and get REWARDs
+                            <span style = {{marginLeft:'16px'}}><img src = {referIcon}></img></span>
+                        </div>
+                        <div className = "refer-statement">Share the referral link below to invite your friends and 💰 EARN 10% of your friends' exchange amount weekly-every THURSDAY.</div>
                     </div>
+                    <div className = "calendar-style"><Calendar /></div>
                 </Grid>
-                <Grid item xs = {12} sm = {7} md = {7} lg={7}>
-                    {getLinkState==false?<Getlink />:<Getlink />}
+                <Grid item xs = {12} sm = {12} md = {6} lg={6}>
+                    <GetLink address = {address} />
+                    <Grid container style = {{marginTop:'3%'}}>
+                        <Grid item xs={12} sm = {12} md = {6} lg={6}><TotalRefer /></Grid>
+                        <Grid item xs={12} sm = {12} md = {6} lg={6}><TotalReward /></Grid>
+                    </Grid>
+                    <Withdraw />
                 </Grid>
-                <Grid item xs={12} sm = {1} md = {1} lg={1}></Grid>
+                <Grid item xs={12} sm = {12} md = {1} lg={1}></Grid>
             </Grid>         
         </div>
     );

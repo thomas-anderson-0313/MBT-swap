@@ -1,11 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {useEffect, useState} from 'react';
-import {Radio, Grid} from '@material-ui/core';
-import { ethers } from 'ethers';
-import {
-    BrowserRouter as Route, Switch ,Link
-  } from "react-router-dom";
+import {useState} from 'react';
+
 
 import Spot from "./spot";
 import Fiat from "./fiat"
@@ -15,17 +10,13 @@ import '../../bootstrap.min.css';
 export default function Buy() {
     const [spotState,setSpotState] = useState(false);
 
-    const handleToggle = (e)=>{
-        setSpotState(e);
-    }
-
     return (
         <div>
             <div>
-            <button className="button-spot-index" onClick={()=>{handleToggle(false)}}>Buy from CRYPTO</button>
-            <button className="button-fiat-index" onClick={()=>{handleToggle(true)}}>Buy from FIAT</button>
+            <button className="button-spot-index" onClick={()=>setSpotState(false)} style={spotState===true?{color:"#ffffff",border:"2px solid #26e3ff",background:"none"}:null}>Buy from CRYPTO</button>
+            <button className="button-fiat-index" onClick={()=>setSpotState(true)} style={spotState===true?{color:"#000002",border:"none",backgroundColor:"#26e3ff"}:null}>Buy from FIAT</button>
             </div>
-            {spotState==false?<Spot />:<Fiat />}
+            {spotState===false?<Spot />:<Fiat />}
         </div>
     );
 }

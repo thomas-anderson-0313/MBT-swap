@@ -1,32 +1,39 @@
 .x-swapForm-dropdown{
-    width: 80%;
-    height: 40px;
+    width: 50%;
+    height: 45px;
     font-size: 15px;
     font-weight: 600;
     border: none;
     outline: none;
-    background-color: rgb(26,27,31);
-    color: white;
+    background-color: #26e3ff;
+    color: black;
     justify-content: center;
-    border-radius: 30px;
+    border-radius: 23px;
   }
 
+  .styleSwapForm{
+    padding: 20px 70px;
+    background-color: #222127;
+    border-radius: 25px;
+    border: 0.75pt solid #333333;
+  }
   .x-swapForm-dropdown-container{
   z-index: 20;
   position: absolute;
-  width:15%;
-  margin-top:5px
+  width:10%;
+  margin-top:5px;
 }
 .x-swapForm-dropdown-item{
     width: 100%;
-    height: 50px;
+    height: 40px;
     font-size: 14px;
     font-weight: 600;
     border: none;
     outline: none;
     color: white;
     text-align: left;
-    background: rgb(26,27,31);
+    background: rgb(38, 227, 255,20%);
+    padding-left: 20px;
   }
   .x-swapForm-input{
     width: 100%;
@@ -51,23 +58,25 @@
     font-weight: 500!important;
   }
   .x-font3-swap{
-    color: white!important;
+    color: #26e3ff!important;
     font-size: 15px!important;
     font-weight: 500!important;
   }
   .x-swapCard-submit-button{
-    background-color: rgb(13,191,74);
-    font-size: 22px;
-    color: white;
+    background-color: #26e3ff;
+    font-size: 20px;
+    color: #000002;
     border: none;
     outline: none;
     font-weight: 600;
     border-radius: 58px;
-    padding: 11px;
-    width: 60%;
-    margin-bottom: 20px;
-    margin-left: 20%;
+    padding: 14px;
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 30%;
+    font-family: Arial;
   }
   .x-swapForm-token{
     font-size: 20px;
+    margin-left: 12px;
   }

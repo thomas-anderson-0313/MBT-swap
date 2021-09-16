@@ -1,0 +1,27 @@
+#payment-form{
+  width: 60%;
+  margin-left: 10%;
+}
+#card-element{
+  background-color: #222127;
+  padding: 20px;
+  border: 0.75pt solid #333333;
+  border-radius: 6px;
+}
+#submit{
+  border-radius: 8px;
+  background-color: #26e3ff;
+  font-family: Arial;
+  margin-top: 3%;
+  width: 60%;
+  margin-left: 20%;
+  padding: 8px;
+  font-size: 20px;
+}
+.hidden{
+  display: none;
+}
+.bottom_border{
+  border-bottom: 1px solid  white;
+  padding-bottom: 15px;
+}

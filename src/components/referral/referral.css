@@ -1,18 +1,166 @@
-.referral-menu{
-    margin-top: 22%;
-    background-color: rgb(241, 233, 116);
-    background-size: cover;
-    border-radius: 10px;
-    width: 100%;
-    height: 50vh;
-    padding-top: 18%;
-    padding-left: 20%;
+.refer-title{
+    font-size: 45px;
 }
-.refer-font{
-    color: black;
+.refer-statement{
+    font-size: 25px;
+    /* margin-top: 10%; */
+}
+.referral-left{
+    border: 0.75pt solid #333333;
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    font-family: Arial;
+}
+.get-link{
+    padding: 20px;
+    border: 0.75pt solid #333333;
+    border-radius: 15px;
+    background-color: #222127;
+    margin-left: 5%;
+}
+.get-link-title{
+    color: #26e3ff;
     font-size: 20px;
+    font-family: Arial;
+    border-bottom: solid 1px white;
 }
-.referral-menu-x{
-    border-bottom: 1px solid lightgrey;
+.git-link-url{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.get-link-button{
+    margin-top: 2%;
+    margin-left: 15%;
+    width: 70%;
+    color: white;
+    background:none ;
+    border-radius: 20px;
+    border:1px solid #26e3ff;
+    padding: 10px;
+}
+.get-link-button:hover{
+    background-color: #333333;
+    color: #26e3ff;
+}
+.get-link-button:active{
+    background-color: #26e3ff;
+    color: #333333;
+}
+.get-link-button1{
+    margin-top: 2%;
+    margin-left: 15%;
+    width: 70%;
+    color: white;
+    background:none ;
+    border-radius: 20px;
+    border:1px solid #26e3ff;
+    padding: 10px;
+}
+.total-referral{
+    padding: 20px;
+    border: 0.75pt solid #333333;
+    border-radius: 15px;
+    background-color: #222127;
+    margin-top: 3%;
     width: 80%;
+    margin-left: 10%;
+}
+.total-referral-title{
+    color: #26e3ff;
+    font-size: 20px;
+    font-family: Arial;
+    border-bottom: solid 1px white;
+}
+.total-referral-count{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.total-reward{
+    padding: 20px;
+    border: 0.75pt solid #333333;
+    border-radius: 15px;
+    background-color: #222127;
+    margin-top: 2%;
+}
+.total-reward-title{
+    color: #26e3ff;
+    font-size: 20px;
+    font-family: Arial;
+    border-bottom: solid 1px white;
+}
+.total-reward-count{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.date-style{
+    color:white;
+    font-size: 20px;
+    font-family: Arial;
+    margin-top: 30px;
+    border: 0.75pt solid #333333;
+    width: 30%;
+}
+.calendar-style{
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+.withdraw-button{
+    color: black;
+    background-color: #26e3ff;
+    border: 1px solid #222127;
+    border-radius: 10px;
+    padding:20px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    font-size: 30px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.withdraw-button:hover{
+    color:white;
+    background:none;
+    border: 1px solid #26e3ff;
+    border-radius: 10px;
+    padding:20px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    font-size: 30px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.withdraw-button:active{
+    color:white;
+    background:none;
+    border: 1px solid #26e3ff;
+    border-radius: 10px;
+    padding:20px;
+    width: 70%;
+    margin-left: 15.2%;
+    margin-top: 5.2%;
+    font-size: 30px;
+    font-family: Arial;
+    font-weight: bold;
+}
+.withdraw-button1{
+    color: black;
+    background-color: rgb(38, 227, 255, 40%);
+    border: 1px solid #222127;
+    border-radius: 10px;
+    padding:20px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    font-size: 30px;
+    font-family: Arial;
+    font-weight: bold;
 }

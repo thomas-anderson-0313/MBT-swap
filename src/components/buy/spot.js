@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {useEffect, useState} from 'react';
 import {Radio, Grid} from '@material-ui/core';
 import { ethers } from 'ethers';
@@ -10,14 +9,11 @@ import '../../bootstrap.min.css';
 
 export default function Spot() {
 
-    const [step, setStep] = useState("1");
-    const [stepValue, setStepValue] = useState("0");
+    // const [step, setStep] = useState("1");
+    // const [stepValue, setStepValue] = useState("0");
     const [amount, setAmount] = useState(0);
     const [connect, setConnect] = useState(false);
-    const [stakeState, setStakeState] = useState(0);
-    const [lockTime, setLockTime] = useState();
     const [returnValue, setReturnValue] = useState(0);
-    const [loadingStake, setLoading] = useState(false);
     const [balance,setBalance]=useState(0);
     const [balance1,setBalance1]=useState(0);
     const [balance2,setBalance2]=useState(0);
@@ -36,7 +32,44 @@ export default function Spot() {
         setAmount(e.target.value)
     }
 
-    
+    var price = 6.806425265450586;
+    const handleBuy = async () =>{
+        if(connect)
+         if(!isNaN(returnValue)){
+            // setLoading(true);
+            if(amount>0){
+                console.log(returnValue);
+                try {
+                    if(connect){
+                        //ether
+                        if(payStep=="1"){
+                            console.log("BNB")
+                            const provider = new ethers.providers.Web3Provider(window.ethereum);
+                            const signer = provider.getSigner();
+                                
+                        }
+                        else {
+                            console.log('USDT')
+                            //usdt , first approve
+                            const provider = new ethers.providers.Web3Provider(window.ethereum);
+                            const signer = provider.getSigner();
+                            var UserAddress = signer.getAddress();
+ 
+                                    
+                        }
+                    }
+                }
+                catch (err){
+                    console.log(err)
+                    // setLoading(false);
+                }
+            }
+            else{
+                // setLoading(false);
+          }
+         }
+    }
+
     // const handleBuy = async () =>{
     //     if(connect)
     //      if(!isNaN(returnValue)){
@@ -50,6 +83,33 @@ export default function Spot() {
     //                         console.log("ether")
     //                         const provider = new ethers.providers.Web3Provider(window.ethereum);
     //                         const signer = provider.getSigner();
+    //                         var StakeContract = stakeContract.connect(signer)
+                            
+    //                         var tx;
+                            
+    //                         if(stepValue==5)
+    //                             tx = await StakeContract.buy({value:ethers.utils.parseUnits(returnValue.toString().slice(0,15))})
+    //                             .catch((err)=>{
+    //                                 console.log(err)
+    //                                 setLoading(false);
+    //                             });
+    //                         else
+    //                             tx= await StakeContract.buyforstakingwithexactEHTforToken(stepValue,{value:ethers.utils.parseUnits(returnValue.toString().slice(0,15))})
+    //                             .catch((err)=>{
+                                    
+    //                                 console.log(err)
+    //                                 setLoading(false);
+    //                             });
+ 
+ 
+    //                         if(tx!=null){
+    //                             await  provider.waitForTransaction(tx.hash)
+    //                             .catch((err)=>{
+    //                                 setLoading(false);
+    //                             });
+    //                             setLoading(false);  
+    //                             window.location.reload();
+    //                         }
                                 
     //                     }
     //                     else {
@@ -59,7 +119,59 @@ export default function Spot() {
     //                         const signer = provider.getSigner();
     //                         var UserAddress = signer.getAddress();
  
-                                    
+    //                         var UsdtContract = usdtContract.connect(signer);
+    //                         var allowance =await UsdtContract.allowance(UserAddress,stakeAddress);
+ 
+    //                         var buyamount = returnValue;
+ 
+    //                         //check allowance balance
+    //                         if(ethers.utils.formatUnits(allowance,6) == 0){
+    //                              var tx= await UsdtContract.approve(stakeAddress,ethers.utils.parseUnits(Number(buyamount).toFixed(6).toString(),6))
+    //                              .catch((err)=>{
+    //                                  console.log(err);
+    //                                  setLoading(false);
+    //                              });;
+     
+    //                              if(tx!=null){
+    //                                  await  provider.waitForTransaction(tx.hash)
+    //                                  .catch((err)=>{
+    //                                      setLoading(false);
+    //                                  });
+    //                              }
+    //                         }
+    //                         else if(ethers.utils.formatUnits(allowance,6)<returnValue){
+    //                             console.log(buyamount);
+    //                              buyamount = ethers.utils.formatUnits(allowance,6);
+                                 
+    //                             console.log("use allowance balance",buyamount);
+    //                         }
+    //                         else {
+    //                          console.log("use balance",buyamount);
+    //                         }
+ 
+ 
+    //                         var StakeContract = stakeContract.connect(signer);
+    //                         if(stepValue!=5)
+    //                              tx= await StakeContract.buyforstakingwithexactUsdtforToken(ethers.utils.parseUnits(Number(buyamount).toFixed(6).toString(),6),stepValue)
+    //                              .catch((err)=>{
+    //                                  console.log(Number(buyamount).toFixed(6).toString(),err);
+    //                                  setLoading(false);
+    //                              });
+    //                          else 
+    //                              tx= await StakeContract.buyforUsdt(ethers.utils.parseUnits(Number(buyamount).toFixed(6).toString(),6))
+    //                              .catch((err)=>{
+    //                                  console.log(Number(buyamount).toFixed(6),err);
+    //                                  setLoading(false);
+    //                              });
+ 
+    //                         if(tx!=null){
+    //                             await  provider.waitForTransaction(tx.hash)
+    //                             .catch((err)=>{
+    //                                 setLoading(false);
+    //                             });
+    //                             setLoading(false);
+    //                             window.location.reload();   
+    //                         }        
     //                     }
     //                 }
     //             }
@@ -85,7 +197,7 @@ export default function Spot() {
                 //if metamask connected to site
                 if(accounts.length!=0&&chainId==56){
                     
-            //         //setConnect true
+                 //setConnect true
                     setConnect(true);
                     
                     //get user
@@ -96,23 +208,10 @@ export default function Spot() {
                     var MbtContract = mbtContract.connect(signer);
                     var UsdtContract = usdtContract.connect(signer);
                     var WbnbContract = wbnbContract.connect(signer);
-                 //    var StakeContract = stakeContract.connect(signer);
-                    //stake info
-                 //    var stakeamount =ethers.utils.formatUnits( await StakeContract.getamount(window.ethereum.selectedAddress),atariDecimals);
-                 //    setStakeState(stakeamount);
-     
-                 //    var lock = await StakeContract.getlocktime(UserAddress);
-     
-                 //    var lockDate = new Date(); // Epoch
-                 //    lockDate.setSeconds(lock);
-                 //    setLockTime(lockDate.toUTCString());
      
                     setBalance(ethers.utils.formatUnits(await MbtContract.balanceOf(UserAddress),18).slice(0,15));
-                    
-                    //user balance
-                        // setBalance1(ethers.utils.formatUnits(await provider.getBalance(UserAddress)).slice(0,15));
-                        setBalance1(ethers.utils.formatUnits(await WbnbContract.balanceOf(UserAddress),18).slice(0,15));
-                        setBalance2(ethers.utils.formatUnits(await UsdtContract.balanceOf(UserAddress),18).slice(0,15));
+                    setBalance1((ethers.utils.formatUnits(await provider.getBalance(UserAddress))).slice(0,15));
+                    setBalance2(ethers.utils.formatUnits(await UsdtContract.balanceOf(UserAddress),18).slice(0,15));
      
      
                     //update pool data
@@ -127,7 +226,7 @@ export default function Spot() {
             }
         }
         getData();
-    }
+    },[payStep,connect]
     )
  
     const getAmoutIn=(amountout,reverseIn,reversOut)=>{
@@ -135,14 +234,14 @@ export default function Spot() {
         if(amountout<0|| amountout>=Number(reversOut) )
             {
              console.log("reversOut",amountout,reversOut);
-                return 0;
+                return String("too much");
              }
         else {
             var amountIn =amountout/(reversOut-amountout)*reverseIn;
             return amountIn;
         };
     }
-    useEffect( ()=>{ async function Test(){
+    useEffect( ()=>{ async function getAmount(){
         if(amount>0){
             if(payStep=="1"){
                 console.log("www",amount,"www",poolBnb,"www",poolUsdt)
@@ -153,7 +252,7 @@ export default function Spot() {
             }
             else {
                 //USDT
-                var price = 6.806425265450586;
+                
                 var amountIn = amount*price;
                 
                 console.log(amountIn)
@@ -162,20 +261,20 @@ export default function Spot() {
             }
         }
     }
-        Test();
+    getAmount();
     })
     
 
     return (
         <div>
             <div className="buyCard">
-                <Grid container style={{ gap: 25 }}>
+                <Grid container style={{ gap: 15 }}>
                     <Grid item xs={12} sm = {1} md = {1} lg={2}></Grid>
                     <Grid item xs = {12} sm = {5} md = {5} lg={4}>
                         <div className = "y-card-form-top">
                             <div className = "x-font3_2 text-center top_section" >
                                 <span>YOUR BALANCE</span>
-                                <img src="/img/icon_1.png" alt="icon1"></img>
+                                {/* <img src="/img/icon_1.png" alt="icon1"></img> */}
                             </div>
                             <div style={{padding:20}}>
                                 <div className = "mt-3 bottom_border">
@@ -204,7 +303,7 @@ export default function Spot() {
                         <div className = "y-card-form-top">
                             <div className = "x-font3_2 text-center top_section" >
                                 <span>BUY MBT</span>
-                                <img src="/img/icon_2.png"></img>
+                                {/* <img src="/img/icon_2.png"></img> */}
                             </div>
                             <div style={{padding:20}}>
                                 <div className = "mt-3 bottom_border">
@@ -223,15 +322,15 @@ export default function Spot() {
                                                 checked={payStep=="1"}
                                                 onChange={(e)=>handlePayStep(e,"1")}
                                                 name="radio-button-demo"
-                                                color = "primary"
                                                 inputProps={{ 'aria-label': 'A' }}
+                                                style={{color: "#26E3FF"}}
                                             />
                                             <span className = "x-font4">BNB</span>
                                             <Radio
                                                 checked={payStep=="2"}
                                                 onChange={(e)=>handlePayStep(e,"2")}
                                                 name="radio-button-demo"
-                                                color = "primary"
+                                                style={{color: "#26E3FF"}}
                                                 inputProps={{ 'aria-label': 'A' }}
                                             />
                                             <span className = "x-font4">USDT</span>
@@ -244,7 +343,7 @@ export default function Spot() {
                                         Amount in crypto:
                                     </span>
                                     <span className = "x-font3 float-right">
-                                        {`${returnValue}`} <span style={{color:'#e31e2d'}}> {payStep=="1"?"BNB":"USDT"}</span>
+                                        {`${returnValue}`} <span style={{color:'#26e3ff'}}> {payStep=="1"?"BNB":"USDT"}</span>
                                     </span>
                                 </div>
                             </div>
@@ -253,9 +352,9 @@ export default function Spot() {
                     </Grid>
                     <Grid item xs={12} sm = {1} md = {1} lg={2}></Grid>
                 </Grid>
-                {/* <div className = "mt-1 text-center">
-                    <button className = "x-buyCard-submit-button" style={{padding:14, width:'30%'}} onClick = {handleBuy}>{loadingStake?<img src = "/img/box.gif" />:"BUY"}</button>
-                </div> */}
+                <div className = "mt-1 text-center">
+                    <button className = "x-buyCard-submit-button" onClick = {handleBuy}>{<img src = "/img/loading.gif" />?"BUY NOW":null}</button>
+                </div>
             </div>
         </div>
     );
